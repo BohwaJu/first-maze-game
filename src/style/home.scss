@@ -13,7 +13,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/bg-root.jpg");
+    background-image: url("../assets/bg_root.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,9 +21,22 @@
     z-index: 0;
   }
 
-  .start-button {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
     margin-top: 40px;
   }
+
+  .start-button {
+    margin-bottom: 0;
+  }
+
+  .navigation-button {
+    margin-bottom: 0;
+  }
+
   .highlight {
     color: #92b2a9;
   }
@@ -31,7 +44,7 @@
 .start-story {
   font-family: var(--font-nanum-myeongjo);
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.6;
   color: #f0f0f0;
   white-space: pre-line;
   font-style: italic;

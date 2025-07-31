@@ -1,4 +1,4 @@
-export const sampleTexts = [
+export const START_TEXT = [
   {
     text: `"게시판에 붙은 공지 봤어?"`,
     className: "text-primary",
@@ -8,7 +8,7 @@ export const sampleTexts = [
     className: "text-secondary",
   },
   {
-    text: "테이블에 느긋하게 앉아 맥주를 마시던 로즈가 물었다.",
+    text: "테이블에 느긋하게 앉아 맥주를 마시고 있던 로즈가 물었다.",
     className: "text-accent",
   },
   {

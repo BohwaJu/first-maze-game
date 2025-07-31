@@ -1,4 +1,4 @@
-.start-page {
+.garden-page {
   &::before {
     content: "";
     position: fixed;
@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/bg_root.jpg");
+    background-image: url("../assets/bg_garden.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
