@@ -1,0 +1,54 @@
+.custom-button {
+  background-image: url("../assets/texture1.png"),
+    radial-gradient(88.86% 132.66% at 50% 92.32%, transparent 0, transparent);
+  color: #f0f0f0;
+  border: 2px solid rgb(193 133 0);
+  padding: 10px 20px;
+  cursor: pointer;
+  background-blend-mode: overlay;
+  background-position: 50%;
+  font-size: 16px;
+  height: 56px;
+  background-color: rgb(42 28 12);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgb(193, 133, 0) 0px 15px 40px -8px;
+  border-radius: 2px;
+  font-family: var(--font-gideon-roman);
+  font-weight: 600;
+  &:active {
+    position: relative;
+    top: 4px;
+  }
+}
+button {
+  cursor: pointer;
+  z-index: 10;
+}
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 25%;
+}
+
+// TextSlider 버튼 스타일
+.slider-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #fff;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    color: #ccc;
+    opacity: 0.5;
+  }
+}

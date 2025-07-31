@@ -1,0 +1,266 @@
+@use "../style/button.scss";
+@use "../style/home.scss";
+@use "../style/start.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// 스크롤바 숨기기
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  background-color: #000;
+}
+* {
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.base-slide-text {
+  color: #f0f0f0;
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  line-height: 1.5;
+  font-family: var(--font-nanum-myeongjo);
+  margin: 0;
+  white-space: pre-line;
+  padding: 0 20px;
+  max-width: 60vw;
+}
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-title {
+  font-family: var(--font-gideon-roman);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.page-subtitle {
+  font-family: var(--font-nanum-myeongjo);
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  color: #f0f0f0;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.game-page {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+// Fade-in slide-up animation
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-slide-up {
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+  opacity: 0; // 초기 상태를 투명하게 설정
+}
+
+// 지연 시간을 다르게 주는 변형들
+.fade-in-slide-up-delay-1 {
+  animation: fadeInSlideUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.fade-in-slide-up-delay-08 {
+  animation: fadeInSlideUp 0.8s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.fade-in-slide-up-delay-3 {
+  animation: fadeInSlideUp 0.8s ease-out 3s forwards;
+  opacity: 0;
+}
+
+// TextSlider 반응형 레이아웃
+.text-slider-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+// 데스크톱에서 태블릿용 버튼 컨테이너 숨기기
+.slider-buttons-container {
+  display: none;
+}
+
+// 태블릿 이하 (768px 이하)에서 세로 레이아웃
+@media (max-width: 768px) {
+  .text-slider-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .base-slide-text {
+    max-width: 90vw;
+    margin-bottom: 15px;
+  }
+
+  .slider-button {
+    padding: 8px 12px;
+    font-size: 20px;
+  }
+
+  // 태블릿 이하에서 기존 버튼들 숨기기
+  .text-slider-container > .slider-button {
+    display: none;
+  }
+
+  // 태블릿 이하에서 버튼들을 감싸는 컨테이너 보이기
+  .slider-buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+// 모달 스타일
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #2a1c0c 0%, #1a0f05 100%);
+  border: 2px solid rgb(193, 133, 0);
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease-out;
+}
+
+.modal-title {
+  font-family: var(--font-gideon-roman);
+  font-size: 24px;
+  color: #f0f0f0;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.modal-body {
+  font-family: var(--font-nanum-myeongjo);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f0f0f0;
+  margin-bottom: 25px;
+  white-space: pre-line;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-button {
+  padding: 12px 24px;
+  border: 2px solid rgb(193, 133, 0);
+  border-radius: 4px;
+  font-family: var(--font-gideon-roman);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.modal-button-confirm {
+  background: linear-gradient(
+    135deg,
+    rgb(193, 133, 0) 0%,
+    rgb(150, 100, 0) 100%
+  );
+  color: #fff;
+}
+
+.modal-button-confirm:hover {
+  background: linear-gradient(
+    135deg,
+    rgb(210, 150, 0) 0%,
+    rgb(170, 120, 0) 100%
+  );
+  transform: translateY(-2px);
+}
+
+.modal-button-cancel {
+  background: transparent;
+  color: rgb(193, 133, 0);
+}
+
+.modal-button-cancel:hover {
+  background: rgba(193, 133, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
