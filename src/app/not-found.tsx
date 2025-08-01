@@ -19,7 +19,7 @@ export default function NotFound() {
       <PageHeader title="404" subtitle="- Page Not Found -" />
 
       <div className="not-found-content">
-        <h1 className="not-found-title">404</h1>
+        <h1 className="not-found-title">Game Over</h1>
         <p className="not-found-message">
           길을 잘못 들었다.
           <br />

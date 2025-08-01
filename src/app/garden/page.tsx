@@ -18,10 +18,11 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "다음문제를 준비중이에요",
-      content: "다음 목적지를 입력해주세요.",
+      title: "암호를 해독하자",
+      content: "로이드 어쩌면 펜이 쓰는 용도가 아닐수도 있다고 말했다.",
       confirmText: "이동",
       cancelText: "취소",
+      placeholder: "암호를 입력해주세요",
       navigate: (path: string) => {
         console.log(`이동: ${path}`);
         router.push(path);

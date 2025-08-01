@@ -77,6 +77,21 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: center;
 }
+.text-italic {
+  font-style: italic;
+}
+.text-green {
+  color: #92b2a9;
+}
+.text-roboto {
+  font-family: var(--font-roboto);
+}
+.text-sanserif {
+  font-family: var(--font-sanserif);
+}
+.font-24 {
+  font-size: 48px;
+}
 // Fade-in slide-up animation
 @keyframes fadeInSlideUp {
   0% {
@@ -127,6 +142,12 @@ body::-webkit-scrollbar {
 
 // 태블릿 이하 (768px 이하)에서 세로 레이아웃
 @media (max-width: 768px) {
+  .home-page {
+    padding: 40px 20px;
+  }
+  .game-page {
+    padding: 40px 20px;
+  }
   .text-slider-container {
     flex-direction: column;
     gap: 15px;
@@ -307,7 +328,7 @@ body::-webkit-scrollbar {
 
 .not-found-title {
   font-family: var(--font-gideon-roman);
-  font-size: 120px;
+  font-size: 80px;
   font-weight: 600;
   color: rgb(193, 133, 0);
   margin: 0 0 30px 0;
