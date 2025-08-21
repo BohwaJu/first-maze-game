@@ -23,10 +23,10 @@ const Page = () => {
       content: "어디로 가는거야? 라고 묻자, 로즈가 답했다.",
       confirmText: "이동",
       cancelText: "취소",
-      placeholder: "자연의 숨결을 느낄 수 있는 곳",
-      navigate: (path: string) => {
+      placeholder1: "자연의 숨결을 느낄 수 있는 곳",
+      onClick: (path: string) => {
         console.log(`이동: ${path}`);
-        router.push(path);
+        router.push(`/${path}`);
       },
     });
   };

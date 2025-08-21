@@ -18,12 +18,12 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "준비중",
-      content: "ㅇㅇ",
+      title: "예술가가 사용한 보석",
+      content: "예술가는 왜 이 보석을 선택했을까?",
       confirmText: "이동",
       cancelText: "취소",
-      placeholder: "준비중임",
-      navigate: (path: string) => {
+      placeholder1: "그게 뭐지?",
+      onClick: (path: string) => {
         console.log(`이동: ${path}`);
         router.push(path);
       },
@@ -42,7 +42,7 @@ const Page = () => {
         {showButton && (
           <CustomButton
             className="start-button"
-            title="암호 해독하기"
+            title="보석을 찾아서"
             onClick={handleButtonClick}
           />
         )}

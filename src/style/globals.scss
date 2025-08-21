@@ -36,7 +36,6 @@ body::-webkit-scrollbar {
   margin: 0;
   white-space: pre-line;
   padding: 0 20px;
-  max-width: 60vw;
 }
 // Mixins
 @mixin flex-center {
@@ -137,15 +136,18 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   flex: 1;
   z-index: 1000;
-  margin-bottom: 40px;
+  padding-bottom: 50px;
+  flex-direction: column;
+  position: relative;
 }
-
-// 데스크톱에서 태블릿용 버튼 컨테이너 숨기기
-.slider-buttons-container {
-  display: none;
+.prev-next-button-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  bottom: 0;
 }
 
 .text-slide {
@@ -168,10 +170,6 @@ body::-webkit-scrollbar {
   }
   .game-page {
     padding: 40px 20px;
-  }
-  .text-slider-container {
-    flex-direction: column;
-    gap: 15px;
   }
 
   .base-slide-text {

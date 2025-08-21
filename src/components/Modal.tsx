@@ -6,12 +6,16 @@ import { useState, useEffect } from "react";
 const Modal = () => {
   const [modalContent, setModalContent] = useAtom(modalAtom);
   const [inputValue, setInputValue] = useState("");
+  const [secondInputValue, setSecondInputValue] = useState("");
 
   useEffect(() => {
     if (modalContent?.inputValue) {
       setInputValue(modalContent.inputValue);
     }
-  }, [modalContent?.inputValue]);
+    if (modalContent?.inputValue2 !== undefined) {
+      setSecondInputValue(modalContent.inputValue2 || "");
+    }
+  }, [modalContent?.inputValue, modalContent?.inputValue2]);
 
   if (!modalContent) return null;
 
@@ -21,12 +25,14 @@ const Modal = () => {
     }
     setModalContent(null);
     setInputValue("");
+    setSecondInputValue("");
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       setModalContent(null);
       setInputValue("");
+      setSecondInputValue("");
     }
   };
 
@@ -35,6 +41,14 @@ const Modal = () => {
     setInputValue(value);
     if (modalContent.onInputChange) {
       modalContent.onInputChange(value);
+    }
+  };
+
+  const handleSecondInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSecondInputValue(value);
+    if (modalContent.onSecondInputChange) {
+      modalContent.onSecondInputChange(value);
     }
   };
 
@@ -52,15 +66,16 @@ const Modal = () => {
       modalContent.onConfirm();
     }
 
-    // 인풋 값이 있고 navigate 함수가 있으면 네비게이션
-    if (inputValue.trim() && modalContent.navigate) {
-      const translatedPath = translatePath(inputValue.trim());
-      const path = `/${translatedPath}`;
-      modalContent.navigate(path);
+    // 인풋 값이 있고 onClick 함수가 있으면 그대로 전달
+    const trimmedFirst = inputValue.trim();
+    const trimmedSecond = secondInputValue.trim();
+    if (trimmedFirst && modalContent.onClick) {
+      modalContent.onClick(trimmedFirst, trimmedSecond || undefined);
     }
 
     setModalContent(null);
     setInputValue("");
+    setSecondInputValue("");
   };
 
   return (
@@ -78,11 +93,23 @@ const Modal = () => {
               value={inputValue}
               onChange={handleInputChange}
               placeholder={
-                modalContent.placeholder || "페이지 경로를 입력하세요"
+                modalContent.placeholder1 || "페이지 경로를 입력하세요"
               }
               className="modal-input"
               autoFocus
               key="navigation-input"
+            />
+          )}
+          {modalContent.inputValue2 !== undefined && (
+            <input
+              type="text"
+              value={secondInputValue}
+              onChange={handleSecondInputChange}
+              placeholder={
+                modalContent.placeholder2 || "두번째 값을 입력하세요"
+              }
+              className="modal-input"
+              key="navigation-second-input"
             />
           )}
         </div>
@@ -95,7 +122,7 @@ const Modal = () => {
               {modalContent.cancelText}
             </button>
           )}
-          {(modalContent.onConfirm || modalContent.navigate) &&
+          {(modalContent.onConfirm || modalContent.onClick) &&
             modalContent.confirmText && (
               <button
                 className="modal-button modal-button-confirm"

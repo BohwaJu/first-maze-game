@@ -40,20 +40,23 @@ export const useModal = () => {
     onCancel?: () => void;
     confirmText?: string;
     cancelText?: string;
-    placeholder?: string;
-    navigate: (path: string) => void;
+    placeholder1?: string;
+    placeholder2?: string;
+    onClick?: (path: string, secondInput?: string) => void;
   }) => {
     openModal({
       title: options.title || "페이지 이동",
       content: options.content || "이동하고 싶은 페이지 경로를 입력하세요.",
       children: options.children,
       inputValue: "",
+      inputValue2: options.placeholder2 ? "" : undefined,
       onConfirm: options.onConfirm,
       onCancel: options.onCancel,
       confirmText: options.confirmText || "이동",
       cancelText: options.cancelText || "취소",
-      navigate: options.navigate,
-      placeholder: options.placeholder,
+      onClick: options.onClick,
+      placeholder1: options.placeholder1,
+      placeholder2: options.placeholder2,
     });
   };
 

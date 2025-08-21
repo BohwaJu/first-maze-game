@@ -1,15 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
+import { isSponsorGuild } from "@/utils/sponsor";
 
 interface TextItem {
   text: string;
   className?: string;
-  // 문자열 경로(public/ 또는 원격) 혹은 정적 import 모두 지원
   imgUrl?: string;
   image?: StaticImageData;
   imgWidth?: number;
   imgHeight?: number;
+  isSponsorCheck?: boolean;
 }
 
 interface TextSliderProps {
@@ -19,6 +20,28 @@ interface TextSliderProps {
 
 const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [filteredTexts, setFilteredTexts] = useState<TextItem[]>(() =>
+    texts.filter((t) => !t.isSponsorCheck)
+  );
+  const [nickname, setNickname] = useState("무명");
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    const sponsor = isSponsorGuild();
+    setFilteredTexts(sponsor ? texts : texts.filter((t) => !t.isSponsorCheck));
+    try {
+      const nn = localStorage.getItem("nickname") || "무명";
+      setNickname(nn);
+    } catch {
+      setNickname("무명");
+    }
+  }, [hydrated, texts]);
+
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -26,19 +49,19 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
   };
 
   const handleNext = () => {
-    if (currentIndex < texts.length - 1) {
+    if (currentIndex < filteredTexts.length - 1) {
       const newIndex = currentIndex + 1;
       setCurrentIndex(newIndex);
 
       // 마지막 텍스트에 도달했을 때 콜백 호출
-      if (newIndex === texts.length - 1 && onLastTextReached) {
+      if (newIndex === filteredTexts.length - 1 && onLastTextReached) {
         onLastTextReached();
       }
     }
   };
 
   // texts가 없거나 비어있으면 로딩 표시
-  if (!texts || texts.length === 0) {
+  if (!filteredTexts || filteredTexts.length === 0) {
     return (
       <div style={{ color: "white", textAlign: "center" }}>
         텍스트를 불러오는 중...
@@ -46,26 +69,18 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
     );
   }
 
-  const current = texts[currentIndex];
+  const current = filteredTexts[currentIndex];
 
   return (
     <div className="text-slider-container">
-      <button
-        onClick={handlePrevious}
-        disabled={currentIndex === 0}
-        className="slider-button"
-      >
-        &lt;
-      </button>
-
       <div className="text-slide" key={currentIndex}>
         {current?.imgUrl && (
           <Image
             key={`${currentIndex}-image`}
             src={current.imgUrl}
             alt={current?.text ? `${current.text} 이미지` : "slide image"}
-            width={current?.imgWidth ?? 150}
-            height={current?.imgHeight ?? 150}
+            width={current?.imgWidth ?? 200}
+            height={current?.imgHeight ?? 200}
             className="slider-image"
             priority
           />
@@ -75,20 +90,15 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
             current?.className || ""
           }`}
         >
-          {current?.text || "텍스트 없음"}
+          {(current?.text || "텍스트 없음").replace(
+            /\{\{nickname\}\}/g,
+            nickname
+          )}
         </p>
       </div>
 
-      <button
-        onClick={handleNext}
-        disabled={currentIndex === texts.length - 1}
-        className="slider-button"
-      >
-        &gt;
-      </button>
-
       {/* 태블릿 이하에서만 보이는 버튼 컨테이너 */}
-      <div className="slider-buttons-container">
+      <div className="prev-next-button-container">
         <button
           onClick={handlePrevious}
           disabled={currentIndex === 0}
@@ -99,7 +109,7 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
 
         <button
           onClick={handleNext}
-          disabled={currentIndex === texts.length - 1}
+          disabled={currentIndex === filteredTexts.length - 1}
           className="slider-button"
         >
           &gt;
