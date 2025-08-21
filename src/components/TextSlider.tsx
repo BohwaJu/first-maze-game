@@ -1,9 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import Image, { type StaticImageData } from "next/image";
 
 interface TextItem {
   text: string;
   className?: string;
+  // 문자열 경로(public/ 또는 원격) 혹은 정적 import 모두 지원
+  imgUrl?: string;
+  image?: StaticImageData;
+  imgWidth?: number;
+  imgHeight?: number;
 }
 
 interface TextSliderProps {
@@ -40,6 +46,8 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
     );
   }
 
+  const current = texts[currentIndex];
+
   return (
     <div className="text-slider-container">
       <button
@@ -50,14 +58,26 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
         &lt;
       </button>
 
-      <p
-        key={currentIndex}
-        className={`fade-in-slide-up base-slide-text ${
-          texts[currentIndex]?.className || ""
-        }`}
-      >
-        {texts[currentIndex]?.text || "텍스트 없음"}
-      </p>
+      <div className="text-slide" key={currentIndex}>
+        {current?.imgUrl && (
+          <Image
+            key={`${currentIndex}-image`}
+            src={current.imgUrl}
+            alt={current?.text ? `${current.text} 이미지` : "slide image"}
+            width={current?.imgWidth ?? 150}
+            height={current?.imgHeight ?? 150}
+            className="slider-image"
+            priority
+          />
+        )}
+        <p
+          className={`fade-in-slide-up base-slide-text ${
+            current?.className || ""
+          }`}
+        >
+          {current?.text || "텍스트 없음"}
+        </p>
+      </div>
 
       <button
         onClick={handleNext}

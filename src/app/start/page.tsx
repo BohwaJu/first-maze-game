@@ -32,7 +32,7 @@ const Page = () => {
   };
 
   return (
-    <div className="game-page start-page">
+    <div className="game-page start-page background-home">
       <PageHeader title="Fressia" subtitle="- The Quest for Treasure -" />
       <TextSlider
         texts={START_TEXT}

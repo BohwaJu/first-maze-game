@@ -47,7 +47,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${gideonRoman.variable} ${nanumMyeongjo.variable}`}
       >
         <Provider>
-          <main className="flex-center">{children}</main>
+          <main className="root-main-container">{children}</main>
           <Modal />
         </Provider>
       </body>

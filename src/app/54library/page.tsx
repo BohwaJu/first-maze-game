@@ -2,7 +2,7 @@
 import CustomButton from "@/components/CustomButton";
 import PageHeader from "@/components/PageHeader";
 import TextSlider from "@/components/TextSlider";
-import { GARDEN_TEXT } from "@/story/garden";
+import { LIBRARY_TEXT } from "@/story/54library";
 import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
 import { useRouter } from "next/navigation";
@@ -18,11 +18,11 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "암호를 해독하자",
-      content: "로이드 어쩌면 펜이 쓰는 용도가 아닐수도 있다고 말했다.",
+      title: "준비중",
+      content: "ㅇㅇ",
       confirmText: "이동",
       cancelText: "취소",
-      placeholder: "암호를 입력해주세요",
+      placeholder: "준비중임",
       navigate: (path: string) => {
         console.log(`이동: ${path}`);
         router.push(path);
@@ -31,10 +31,10 @@ const Page = () => {
   };
 
   return (
-    <div className="game-page garden-page background-garden">
+    <div className="game-page background-library">
       <PageHeader title="Fressia" subtitle="- The Quest for Treasure -" />
       <TextSlider
-        texts={GARDEN_TEXT}
+        texts={LIBRARY_TEXT}
         onLastTextReached={handleLastTextReached}
       />
 

@@ -41,6 +41,7 @@ const Modal = () => {
   const translatePath = (path: string): string => {
     const pathMap: { [key: string]: string } = {
       정원: "garden",
+      54: "54library",
     };
 
     return pathMap[path] || path;

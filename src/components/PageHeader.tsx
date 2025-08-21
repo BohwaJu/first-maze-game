@@ -4,11 +4,12 @@ import React from "react";
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
+  className?: string;
 }
 
-const PageHeader = ({ title, subtitle }: PageHeaderProps) => {
+const PageHeader = ({ title, subtitle, className }: PageHeaderProps) => {
   return (
-    <div>
+    <div className="className">
       <h1 className="page-title fade-in-slide-up">{title}</h1>
       {subtitle && (
         <h2 className="page-subtitle fade-in-slide-up">{subtitle}</h2>
