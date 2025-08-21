@@ -20,9 +20,7 @@ interface TextSliderProps {
 
 const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [filteredTexts, setFilteredTexts] = useState<TextItem[]>(() =>
-    texts.filter((t) => !t.isSponsorCheck)
-  );
+  const [filteredTexts, setFilteredTexts] = useState<TextItem[]>([]);
   const [nickname, setNickname] = useState("무명");
   const [hydrated, setHydrated] = useState(false);
 

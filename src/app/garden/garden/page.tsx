@@ -2,7 +2,7 @@
 import CustomButton from "@/components/CustomButton";
 import PageHeader from "@/components/PageHeader";
 import TextSlider from "@/components/TextSlider";
-import { GARDEN_TEXT_2 } from "@/story/garden2";
+import { GARDEN_TEXT_2 } from "@/story/garden";
 import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
 import { useRouter } from "next/navigation";

@@ -2,15 +2,16 @@
 import CustomButton from "@/components/CustomButton";
 import PageHeader from "@/components/PageHeader";
 import TextSlider from "@/components/TextSlider";
-import { GARDEN_TEXT } from "@/story/garden";
+import { SAPPHIRE_TEXT } from "@/story/beforeUnderground";
 import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
   const { showNavigationModal } = useModal();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleLastTextReached = () => {
     setShowButton(true);
@@ -18,28 +19,27 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "제 소속과 이름은...",
-      content: "이 사람에게 내 소속을 밝혀도 될까?",
+      title: "정 반대의 의미",
+      content: `고개를 들어 우리가 있는 위치를 한번 더 확인했다.`,
       confirmText: "이동",
       cancelText: "취소",
-      placeholder1: "소속",
-      placeholder2: "이름",
-      onClick: (firstInput: string, secondInput?: string) => {
-        const guild = firstInput.trim();
-        const nickname = (secondInput || "").trim();
-
-        if (guild) localStorage.setItem("guild", guild);
-        if (nickname) localStorage.setItem("nickname", nickname);
-        router.push("/garden/garden");
+      placeholder1: "정 반대에 있는 도서",
+      onClick: (answer: string) => {
+        console.log(`현재: ${pathname}`);
+        if (pathname === "/jewel/sapphire" && answer === "254-Z") {
+          router.push("/254-Z");
+        } else {
+          router.push("/not-found");
+        }
       },
     });
   };
 
   return (
-    <div className="game-page garden-page background-garden">
+    <div className="game-page background-library">
       <PageHeader title="Fressia" subtitle="- The Quest for Treasure -" />
       <TextSlider
-        texts={GARDEN_TEXT}
+        texts={SAPPHIRE_TEXT}
         onLastTextReached={handleLastTextReached}
       />
 
@@ -47,7 +47,7 @@ const Page = () => {
         {showButton && (
           <CustomButton
             className="start-button"
-            title="제 이름은..."
+            title="정 반대의 의미"
             onClick={handleButtonClick}
           />
         )}

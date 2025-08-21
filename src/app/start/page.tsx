@@ -20,13 +20,16 @@ const Page = () => {
   const handleButtonClick = () => {
     showNavigationModal({
       title: "어디로 가시겠습니까?",
-      content: "어디로 가는거야? 라고 묻자, 로즈가 답했다.",
+      content: "어디로? 라고 묻자, 로즈가 답했다.",
       confirmText: "이동",
       cancelText: "취소",
       placeholder1: "자연의 숨결을 느낄 수 있는 곳",
       onClick: (path: string) => {
         console.log(`이동: ${path}`);
-        router.push(`/${path}`);
+        if (path === "정원") {
+          router.push(`/garden`);
+          return;
+        }
       },
     });
   };
