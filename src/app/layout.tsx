@@ -8,6 +8,7 @@ import {
 import "../style/globals.scss";
 import { Provider } from "jotai";
 import Modal from "@/components/Modal";
+import GlobalImagePreloader from "@/components/GlobalImagePreloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${gideonRoman.variable} ${nanumMyeongjo.variable}`}
       >
         <Provider>
+          <GlobalImagePreloader />
           <main className="root-main-container">{children}</main>
           <Modal />
         </Provider>

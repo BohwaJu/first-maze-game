@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
 }
 .page-title {
   font-family: var(--font-gideon-roman);
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0.05em;
@@ -60,9 +60,10 @@ body::-webkit-scrollbar {
   margin-bottom: 5px;
   margin-top: 10px;
 }
+
 .page-subtitle {
   font-family: var(--font-nanum-myeongjo);
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1.4;
   text-align: center;
   color: #f0f0f0;

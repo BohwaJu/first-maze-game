@@ -199,6 +199,7 @@ export const RUBY_TEXT = [
     className: "text-primary",
   },
 ];
+
 export const SAPPHIRE_TEXT = [
   {
     text: `“이 이야기가 사실일 가능성이 있다는 얘긴데...”`,
@@ -230,7 +231,7 @@ export const SAPPHIRE_TEXT = [
     className: "text-primary",
   },
   {
-    text: `정 반대에 있는 도서를 찾을 것.`,
+    text: `/* 정 반대에 있는 도서를 찾을 것. */`,
     className: "text-primary text-highlight",
   },
   {
@@ -246,7 +247,7 @@ export const SAPPHIRE_TEXT = [
 ];
 export const Z_TEXT = [
   {
-    text: `그곳에 발견한 특이한 것이라곤, 낡은 시집밖에 없었다. `,
+    text: `그곳에서 발견한 특이한 것이라곤, 낡은 시집밖에 없었다. `,
     className: "text-primary",
   },
   {
@@ -279,7 +280,7 @@ export const MIRROR_TEXT = [
     className: "text-primary",
   },
   {
-    text: `사파이어는 나의 몫… \n프레시아가 말하기를, “또다른 내가 있다고.”\n\n 아이리스가 제게 말했습니다.`,
+    text: `사파이어는 나의 몫…\n 아이리스는 제게 이렇게 말했습니다.\n\n“프레시아가 말하기를, 또다른 자신이 있다고.”`,
     className: "text-primary text-italic text-highlight",
   },
 ];
@@ -305,7 +306,7 @@ export const TWINS_TEXT = [
     imgUrl: "/rose.png",
   },
   {
-    text: `“근데 그럴 이유가 없지 않아? 사람들한테 숨길 이유가 뭐가 있어. 죄 지은것도 아니잖아.”`,
+    text: `“근데 그럴 이유가 없지 않아? 사람들한테 숨길 이유가 뭐가 있어.”`,
     className: "text-primary",
     imgUrl: "/rose.png",
   },
