@@ -21,20 +21,20 @@
 .background-home {
   @include background-base;
   &::before {
-    background-image: url("../assets/bg_root.jpg");
+    background-image: url("/bg_root.jpg");
   }
 }
 
 .background-garden {
   @include background-base;
   &::before {
-    background-image: url("../assets/bg_garden.jpg");
+    background-image: url("/bg_garden.jpg");
   }
 }
 
 .background-library {
   @include background-base;
   &::before {
-    background-image: url("../assets/bg_book.jpg");
+    background-image: url("/bg_book.jpg");
   }
 }

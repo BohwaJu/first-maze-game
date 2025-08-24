@@ -9,6 +9,7 @@ import "../style/globals.scss";
 import { Provider } from "jotai";
 import Modal from "@/components/Modal";
 import GlobalImagePreloader from "@/components/GlobalImagePreloader";
+import ImagePrefetchLoader from "@/components/ImagePrefetchLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,9 +49,17 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${gideonRoman.variable} ${nanumMyeongjo.variable}`}
       >
         <Provider>
-          <GlobalImagePreloader />
-          <main className="root-main-container">{children}</main>
-          <Modal />
+          <ImagePrefetchLoader
+            fallback={
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                <h2 className="text-xl font-semibold mt-4">앱 로딩 중...</h2>
+              </div>
+            }
+          >
+            <main className="root-main-container">{children}</main>
+            <Modal />
+          </ImagePrefetchLoader>
         </Provider>
       </body>
     </html>

@@ -2,9 +2,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { isSponsorGuild } from "@/utils/sponsor";
-import ImagePreloader from "./ImagePreloader";
-import { addPreloadLinks } from "@/utils/imagePreloader";
-import { imageCache } from "@/utils/imageCache";
 
 interface TextItem {
   text: string;
@@ -26,7 +23,6 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
   const [filteredTexts, setFilteredTexts] = useState<TextItem[]>([]);
   const [nickname, setNickname] = useState("무명");
   const [hydrated, setHydrated] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     setHydrated(true);
@@ -43,51 +39,6 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
       setNickname("무명");
     }
   }, [hydrated, texts]);
-
-  // 이미지 URL들을 추출하고 preload link 추가
-  const imageUrls = useMemo(() => {
-    if (!hydrated) return [];
-    const sponsor = isSponsorGuild();
-    const filtered = sponsor ? texts : texts.filter((t) => !t.isSponsorCheck);
-    const urls = filtered
-      .map((item) => item.imgUrl)
-      .filter(Boolean) as string[];
-
-    // 브라우저 preload link 추가
-    if (urls.length > 0) {
-      addPreloadLinks(urls);
-    }
-
-    return urls;
-  }, [hydrated, texts]);
-
-  // 이미지 캐시 확인 및 로드
-  useEffect(() => {
-    if (imageUrls.length === 0) {
-      setImagesLoaded(true);
-      return;
-    }
-
-    const checkAndLoadImages = async () => {
-      try {
-        // 캐시되지 않은 이미지들만 로드
-        const uncachedImages = imageUrls.filter(
-          (url) => !imageCache.isCached(url)
-        );
-
-        if (uncachedImages.length > 0) {
-          await imageCache.preloadImages(uncachedImages);
-        }
-
-        setImagesLoaded(true);
-      } catch (error) {
-        console.warn("Some images failed to load:", error);
-        setImagesLoaded(true); // 에러가 나도 계속 진행
-      }
-    };
-
-    checkAndLoadImages();
-  }, [imageUrls]);
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
@@ -106,16 +57,6 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
       }
     }
   };
-
-  // 이미지가 로드되지 않았으면 preloader 표시
-  if (!imagesLoaded) {
-    return (
-      <ImagePreloader
-        images={imageUrls}
-        onComplete={() => setImagesLoaded(true)}
-      />
-    );
-  }
 
   // texts가 없거나 비어있으면 로딩 표시
   if (!filteredTexts || filteredTexts.length === 0) {
