@@ -1,6 +1,10 @@
 export const EP_1 = [
   {
-    text: `예술가 개인의 특별한 진상이 편전에서 진행되었다. `,
+    text: `폭우가 쏟아지는 밤`,
+    className: "text-primary",
+  },
+  {
+    text: `예술가 개인의 특별한 진상이 편전에서 진행되었다.`,
     className: "text-primary",
   },
   {
@@ -61,7 +65,7 @@ export const EP_1 = [
     className: "text-primary",
   },
   {
-    text: `조금만 움직임에도 아파보였고, 부서질 것 처럼 위태로워 보였다. `,
+    text: `작은 움직임에도 아파보였고, 부서질 것 처럼 위태로워 보였다. `,
     className: "text-primary",
   },
   {
@@ -70,8 +74,8 @@ export const EP_1 = [
     className: "text-primary",
   },
   {
-    text: `살려주세요...`,
-    className: "text-gray",
+    text: `살려주세요`,
+    className: "text-red",
   },
   {
     text: `아이리스는 뭔가에 홀린 듯, 기사의 칼을 뽑아 그자리에서 예술가의 목을 내리쳤다.`,
@@ -82,7 +86,7 @@ export const EP_1 = [
     className: "text-primary",
   },
   {
-    text: `하늘로 솟구치는 피와 함께, 옆에 선 아이의 시선이 떨어지는 목을 향해 이동했다.`,
+    text: `솟구치는 피와 함께, 옆에 선 아이의 시선이 떨어지는 목을 향해 이동했다.`,
     className: "text-primary",
   },
   {
@@ -142,7 +146,7 @@ export const EP_1 = [
     imgUrl: "/iris.png",
   },
   {
-    text: `“황실의 사제라는자가, 이렇게 무능해서야…”`,
+    text: `“황실의 사제라는 자가, 이렇게 무능해서야…”`,
     className: "text-primary",
     imgUrl: "/iris.png",
   },
@@ -198,7 +202,6 @@ export const EP_1 = [
   {
     text: `로즈는 이미 속이 안좋은지 주먹을 쥔 채 목 아래를 퍽- 퍽- 치고있었다.`,
     className: "text-primary",
-    imgUrl: "/rose.png",
   },
   {
     text: `눈앞에서 벌어지는 일처럼, 너무나도 생생하게 재현되었기 때문이다.`,

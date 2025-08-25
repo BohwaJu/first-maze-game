@@ -37,13 +37,7 @@ export const GARDEN_TEXT_2 = [
     imgUrl: "/knight.png",
   },
   {
-    text: `'아가씨께서 말했던 사람이군'`,
-    className: "text-gray",
-    isSponsorCheck: true,
-    imgUrl: "/knight.png",
-  },
-  {
-    text: `'...마법사다.'`,
+    text: `'아가씨께서 말씀하셨던 사람이군'`,
     className: "text-gray",
     isSponsorCheck: true,
     imgUrl: "/knight.png",
@@ -54,16 +48,25 @@ export const GARDEN_TEXT_2 = [
     imgUrl: "/knight.png",
   },
   {
+    text: `“로즈, 로이드, {{nickname}}. 확인했습니다.”`,
+    className: "text-primary",
+    imgUrl: "/knight.png",
+  },
+  {
     text: `그는 길게 늘어진 양피지에 소속과 이름을 적고는, 별다른 얘기 없이 입장을 허가해주었다.`,
     className: "text-primary",
   },
   {
-    text: `주위를 두리번거리던 로즈와 로이드는 유난히 사람들이 많이 모여 있는 곳으로 이동했다. \n`,
+    text: `“저기 있다.”`,
+    className: "text-primary",
+    imgUrl: "/rose.png",
+  },
+  {
+    text: `주위를 두리번거리던 로즈와 로이드는 유난히 사람들이 많이 모여 있는 곳으로 이동했다.`,
     className: "text-primary",
   },
   {
-    text: `그곳엔 역시나 주점에서 봤던 공지와 비슷한것이 붙어 있었다. 
-`,
+    text: `정원의 중앙. 거대한 벚나무 아래,\n 주점에서 봤던것과 비슷한 공문이 붙어 있었다.`,
     className: "text-primary",
   },
   {
@@ -99,7 +102,7 @@ export const GARDEN_TEXT_2 = [
     imgUrl: "/Lloyd.png",
   },
   {
-    text: `"있겠냐고.”
+    text: `"있겠어?”
 `,
     className: "text-primary",
     imgUrl: "/rose.png",
@@ -109,7 +112,7 @@ export const GARDEN_TEXT_2 = [
     className: "text-primary",
   },
   {
-    text: `"상상을 해보자..."`,
+    text: `"그럼 상상을 해보자..."`,
     className: "text-primary",
     imgUrl: "/Lloyd.png",
   },

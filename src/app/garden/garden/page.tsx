@@ -32,7 +32,7 @@ const Page = () => {
 
   return (
     <div className="game-page garden-page background-garden">
-      <PageHeader title="Fressia" subtitle="- The Quest for Treasure -" />
+      <PageHeader title="Fressia" subtitle="- Prologue -" />
       <TextSlider
         texts={GARDEN_TEXT_2}
         onLastTextReached={handleLastTextReached}

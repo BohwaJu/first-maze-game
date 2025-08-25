@@ -8,7 +8,6 @@ import {
 import "../style/globals.scss";
 import { Provider } from "jotai";
 import Modal from "@/components/Modal";
-import GlobalImagePreloader from "@/components/GlobalImagePreloader";
 import ImagePrefetchLoader from "@/components/ImagePrefetchLoader";
 
 const geistSans = Geist({

@@ -31,10 +31,22 @@
     background-image: url("/bg_garden.jpg");
   }
 }
+.background-beer {
+  @include background-base;
+  &::before {
+    background-image: url("/bg_beer.jpg");
+  }
+}
 
 .background-library {
   @include background-base;
   &::before {
     background-image: url("/bg_book.jpg");
+  }
+}
+.background-hall {
+  @include background-base;
+  &::before {
+    background-image: url("/bg_hall.jpg");
   }
 }

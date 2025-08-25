@@ -2,6 +2,7 @@
 import CustomButton from "@/components/CustomButton";
 import PageHeader from "@/components/PageHeader";
 import TextSlider from "@/components/TextSlider";
+import FadeInOutText from "@/components/FadeInOutText";
 import { EP_1 } from "@/story/episode";
 import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
@@ -9,6 +10,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
+  const [showContent, setShowContent] = useState(false);
   const { showNavigationModal } = useModal();
   const router = useRouter();
   const pathname = usePathname();
@@ -19,7 +21,7 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "EP1. 잊혀지지 않는 밤의 ㅁㅁㅁㅁ",
+      title: "EP1. 잊혀지지 않는 밤",
       content: `장애`,
       confirmText: "이동",
       cancelText: "취소",
@@ -39,20 +41,33 @@ const Page = () => {
   };
 
   return (
-    <div className="game-page background-library">
-      <PageHeader title="EP1" subtitle="- 잊혀지지 않는 밤의 -" />
-      <TextSlider texts={EP_1} onLastTextReached={handleLastTextReached} />
+    <>
+      {!showContent && (
+        <FadeInOutText
+          title="Episode 1"
+          subtitle="프레시아의 첫 번째 기억"
+          titleDelay={0}
+          onComplete={() => setShowContent(true)}
+        />
+      )}
 
-      <div className="button-container fade-in-slide-up">
-        {showButton && (
-          <CustomButton
-            className="start-button"
-            title="프레시아"
-            onClick={handleButtonClick}
-          />
-        )}
-      </div>
-    </div>
+      {showContent && (
+        <div className="game-page background-hall">
+          <PageHeader title="EP1" subtitle="- 잊혀지지 않는 밤의 ____ -" />
+          <TextSlider texts={EP_1} onLastTextReached={handleLastTextReached} />
+
+          <div className="button-container fade-in-slide-up">
+            {showButton && (
+              <CustomButton
+                className="start-button"
+                title="프레시아"
+                onClick={handleButtonClick}
+              />
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

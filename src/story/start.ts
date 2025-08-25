@@ -22,7 +22,12 @@ export const START_TEXT = [
     className: "text-primary",
   },
   {
-    text: `"왕국에서 직접 주최하는 행사 하나봐. \n보상금이 어마어마하던데…\n\n 금화 10억코인이였나?"`,
+    text: `"왕국에서 직접 주최하는 행사 하나봐. \n보상금이 어마어마하던데…"`,
+    className: "text-primary",
+    imgUrl: "/Lloyd.png",
+  },
+  {
+    text: `"금화 10억코인이였나?"`,
     className: "text-primary",
     imgUrl: "/Lloyd.png",
   },
@@ -54,9 +59,9 @@ export const START_TEXT = [
     className: "text-primary",
   },
   {
-    text: `"성 안에서도 자연의 숨결을 느낄 수 있는 곳...?"
+    text: `'성 안에서도 자연의 숨결을 느낄 수 있는 곳...?'
 `,
-    className: "text-green",
+    className: "text-gray",
     imgUrl: "/rose.png",
   },
   {

@@ -19,15 +19,15 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "준비중",
-      content: `준비중`,
+      title: "프레시아의 자매",
+      content: `로즈와 로이드는 처음 듣는 이름이라고 했지만, 내겐 어딘가 익숙한 이름이였다.`,
       confirmText: "이동",
       cancelText: "취소",
-      placeholder1: "...",
+      placeholder1: "너의 이름은...",
       onClick: (answer: string) => {
         console.log(`현재: ${pathname}`);
-        if (pathname === "/254-Z/mirror/twin" && answer === "거울") {
-          // router.push("/254-Z/mirror");
+        if (pathname === "/254-Z/mirror/twin" && answer === "리네시아") {
+          router.push("/254-Z/mirror/twin/linesia");
         } else {
           router.push("/not-found");
         }
@@ -37,7 +37,7 @@ const Page = () => {
 
   return (
     <div className="game-page background-library">
-      <PageHeader title="Fressia" subtitle="- The Quest for Treasure -" />
+      <PageHeader title="Fressia" subtitle="- Prologue -" />
       <TextSlider
         texts={TWINS_TEXT}
         onLastTextReached={handleLastTextReached}
@@ -47,7 +47,7 @@ const Page = () => {
         {showButton && (
           <CustomButton
             className="start-button"
-            title="준비중"
+            title="너의 이름은"
             onClick={handleButtonClick}
           />
         )}
