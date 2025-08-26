@@ -191,7 +191,7 @@ export const EP_1 = [
     className: "text-primary",
   },
   {
-    text: `그러자 어둠 속에서 기사 한명이 모습을 드러낸다.
+    text: `그러자 보이지 않는 곳에서 기사 한명이 모습을 드러낸다.
 `,
     className: "text-primary",
   },

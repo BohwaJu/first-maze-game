@@ -463,7 +463,7 @@ export const LINESIA_TEXT = [
     className: "text-primary",
   },
   {
-    text: `[island]
+    text: `island
 `,
     className: "text-primary text-italic",
   },
