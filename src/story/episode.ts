@@ -186,6 +186,43 @@ export const EP_1 = [
     imgUrl: "/saje.png",
   },
   {
+    text: `아이리스는 잠시 침묵을 지키다가, 누군가를 불렀다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `그러자 어둠 속에서 기사 한명이 모습을 드러낸다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“이 일과 연루된 모든 사람을 찾아라. 한놈도 빠짐없이.”
+
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `‘결국 일을 크게 벌이시는군.’
+
+`,
+    className: "text-primary text-gray",
+    imgUrl: "/saje.png",
+  },
+  {
+    text: `‘그자에게 미리 언질을 해둬야겠어.’
+
+`,
+    className: "text-primary text-gray",
+    imgUrl: "/saje.png",
+    isSponsor: true,
+  },
+  {
+    text: `기사는 그의 명령을 듣고 소리없이 사라졌다.
+`,
+    className: "text-primary",
+  },
+  {
     text: `안개가 서서히 걷힌다.`,
     className: "text-primary",
   },

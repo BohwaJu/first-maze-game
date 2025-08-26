@@ -21,20 +21,17 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "EP1. 잊혀지지 않는 밤",
+      title: "EP1. 잊혀지지 않는 기억",
       content: `장애`,
       confirmText: "이동",
       cancelText: "취소",
       placeholder1: "키워드",
       onClick: (answer: string) => {
         console.log(`현재: ${pathname}`);
-        if (
-          pathname === "/254-Z/mirror" &&
-          (answer === "쌍둥이" || answer === "자매")
-        ) {
-          router.push("/254-Z/mirror/twin");
+        if (pathname === "/episode/ep1/firstMemory" && answer === "트라우마") {
+          router.push("/episode/ep2/trauma");
         } else {
-          router.push("/not-found");
+          return;
         }
       },
     });
@@ -53,7 +50,7 @@ const Page = () => {
 
       {showContent && (
         <div className="game-page background-hall">
-          <PageHeader title="EP1" subtitle="- 잊혀지지 않는 밤의 ____ -" />
+          <PageHeader title="EP1" subtitle="- 잊혀지지 않는 ____ -" />
           <TextSlider texts={EP_1} onLastTextReached={handleLastTextReached} />
 
           <div className="button-container fade-in-slide-up">

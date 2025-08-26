@@ -37,7 +37,7 @@ const Page = () => {
 
   return (
     <div className="game-page background-library">
-      <PageHeader title="Fressia" subtitle="- The Quest for Treasure -" />
+      <PageHeader title="Fressia" subtitle="- Prologue -" />
       <TextSlider
         texts={SAPPHIRE_TEXT}
         onLastTextReached={handleLastTextReached}
