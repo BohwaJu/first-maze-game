@@ -78,9 +78,15 @@ const Modal = () => {
     setSecondInputValue("");
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleConfirm();
+    }
+  };
+
   return (
     <div className="modal-backdrop" onClick={handleBackdropClick}>
-      <div className="modal-content">
+      <div className="modal-content" onKeyDown={handleKeyDown}>
         {modalContent.title && (
           <h2 className="modal-title">{modalContent.title}</h2>
         )}
