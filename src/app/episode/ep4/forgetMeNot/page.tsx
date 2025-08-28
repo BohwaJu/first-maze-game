@@ -6,8 +6,8 @@ import FadeInOutText from "@/components/FadeInOutText";
 import { EP_1 } from "@/story/episode";
 import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
-import { useToast } from "@/hooks/useToast";
 import { usePathname, useRouter } from "next/navigation";
+import { useToast } from "@/hooks/useToast";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
@@ -23,14 +23,14 @@ const Page = () => {
 
   const handleButtonClick = () => {
     showNavigationModal({
-      title: "EP1",
-      content: `이야기의 핵심이 되는 키워드를 찾아야 할 것 같다.`,
+      title: "EP2",
+      content: `"이 이야기의 키워드를 찾아아보자."`,
       confirmText: "이동",
       cancelText: "취소",
       placeholder1: "키워드",
       onClick: (answer: string) => {
-        if (pathname === "/episode/ep1/firstMemory" && answer === "트라우마") {
-          router.push("/episode/ep2/trauma");
+        if (pathname === "/episode/ep2/trauma" && answer === "가족") {
+          router.push("/episode/ep3/forgetMeNot");
         } else {
           showToast("아무일도 일어나지 않았다.");
           return;
@@ -43,8 +43,8 @@ const Page = () => {
     <>
       {!showContent && (
         <FadeInOutText
-          title="Episode 1"
-          subtitle="첫 번째 기억"
+          title="Episode 3"
+          subtitle="가시없는 꽃"
           titleDelay={0}
           onComplete={() => setShowContent(true)}
         />
@@ -52,7 +52,7 @@ const Page = () => {
 
       {showContent && (
         <div className="game-page background-hall">
-          <PageHeader title="EP1" subtitle="- 잊혀지지 않는 ____ -" />
+          <PageHeader title="EP2" subtitle="-__-" />
           <TextSlider texts={EP_1} onLastTextReached={handleLastTextReached} />
 
           <div className="button-container fade-in-slide-up">

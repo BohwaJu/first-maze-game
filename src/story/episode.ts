@@ -215,7 +215,7 @@ export const EP_1 = [
 `,
     className: "text-primary text-gray",
     imgUrl: "/saje.png",
-    isSponsor: true,
+    isSponsorCheck: true,
   },
   {
     text: `기사는 그의 명령을 듣고 소리없이 사라졌다.
@@ -250,7 +250,7 @@ export const EP_1 = [
     imgUrl: "/Lloyd.png",
   },
   {
-    text: `“9살짜리 어린애가 저 광경을 목격했다는거 아니야..? 진짜 제정신들인가?”`,
+    text: `"이게 저 어린애가 겪은 일이라는 거 아니야..? 진짜 제정신들인가?”`,
     className: "text-primary",
     imgUrl: "/rose.png",
   },
@@ -263,5 +263,56 @@ export const EP_1 = [
     text: `“싸이코패스들”`,
     className: "text-primary",
     imgUrl: "/rose.png",
+  },
+];
+
+export const EP_2 = [
+  {
+    text: `프레시아 담당 하녀들의 대기실 분위기는 좋지 않았다.`,
+    className: "text-primary",
+  },
+  {
+    text: `오늘 아침, 프레시아가 아이리스를 향해 뛰어가다가 계단에서 크게 넘어졌기 때문이다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `아이리스는 프레시아의 무릎과 팔에 난 상처들을 보고 역정을 내며, 길 안내를 하던 하녀들에게 책임을 물었고, 상황이 심각해지기 전에 하녀장이 수습했기에 조용히 넘어갈 수 있었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“내가 봤을 때, 이건 과보호야.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `“그야 폐하가 아끼는 아가씨니까. 많이 다치셨던데… 괜찮으시려나.”
+`,
+    className: "text-primary",
+    imgUrl: "/ha1.png",
+  },
+  {
+    text: `“단체로 매까지 맞아야 할 일이냐고.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `하녀 메리가 투덜거린다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `프레시아의 무릎과 팔에 난 상처들을 보며 역정을 내던 아이리스는, 길 안내를 하던 하녀들에게 책임을 물었고, 상황이 심각해지기 전에 하녀장이 수습했기에 조용히 넘어갈 수 있었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“매질로 끝나서 다행이지.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
   },
 ];

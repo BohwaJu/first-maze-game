@@ -4,6 +4,7 @@
 @use "../style/home.scss";
 @use "../style/start.scss";
 @use "../style/garden.scss";
+@use "../style/toast.scss";
 
 body {
   margin: 0;
@@ -141,7 +142,7 @@ body::-webkit-scrollbar {
   font-family: var(--font-nanum-myeongjo);
   font-size: 16px;
   font-weight: 400;
-  color: #a9b7ca;
+  color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 

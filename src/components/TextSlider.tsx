@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { isSponsorGuild } from "@/utils/sponsor";
 
@@ -16,9 +16,14 @@ interface TextItem {
 interface TextSliderProps {
   texts: TextItem[];
   onLastTextReached?: () => void;
+  onIndexChange?: (index: number) => void;
 }
 
-const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
+const TextSlider = ({
+  texts,
+  onLastTextReached,
+  onIndexChange,
+}: TextSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filteredTexts, setFilteredTexts] = useState<TextItem[]>([]);
   const [nickname, setNickname] = useState("무명");
@@ -38,11 +43,13 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
     } catch {
       setNickname("무명");
     }
-  }, [hydrated, texts]);
+  }, [hydrated, texts, onIndexChange]);
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      if (onIndexChange) onIndexChange(newIndex);
     }
   };
 
@@ -50,6 +57,7 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
     if (currentIndex < filteredTexts.length - 1) {
       const newIndex = currentIndex + 1;
       setCurrentIndex(newIndex);
+      if (onIndexChange) onIndexChange(newIndex);
 
       // 마지막 텍스트에 도달했을 때 콜백 호출
       if (newIndex === filteredTexts.length - 1 && onLastTextReached) {
@@ -57,15 +65,6 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
       }
     }
   };
-
-  // texts가 없거나 비어있으면 로딩 표시
-  if (!filteredTexts || filteredTexts.length === 0) {
-    return (
-      <div style={{ color: "white", textAlign: "center" }}>
-        텍스트를 불러오는 중...
-      </div>
-    );
-  }
 
   const current = filteredTexts[currentIndex];
 
@@ -95,23 +94,18 @@ const TextSlider = ({ texts, onLastTextReached }: TextSliderProps) => {
         </p>
       </div>
 
-      {/* 태블릿 이하에서만 보이는 버튼 컨테이너 */}
       <div className="prev-next-button-container">
         <button
           onClick={handlePrevious}
           disabled={currentIndex === 0}
-          className="slider-button"
-        >
-          &lt;
-        </button>
+          className="slider-button prev"
+        ></button>
 
         <button
           onClick={handleNext}
           disabled={currentIndex === filteredTexts.length - 1}
-          className="slider-button"
-        >
-          &gt;
-        </button>
+          className="slider-button next"
+        ></button>
       </div>
     </div>
   );

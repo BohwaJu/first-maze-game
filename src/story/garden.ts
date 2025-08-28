@@ -37,7 +37,7 @@ export const GARDEN_TEXT_2 = [
     imgUrl: "/knight.png",
   },
   {
-    text: `'아가씨께서 말씀하셨던 사람이군'`,
+    text: `'아가씨께서 말씀하셨던 사람이다.'`,
     className: "text-gray",
     isSponsorCheck: true,
     imgUrl: "/knight.png",

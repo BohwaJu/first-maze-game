@@ -1,12 +1,13 @@
 "use client";
 import { useAtom } from "jotai";
 import { modalAtom } from "@/store/modalStore";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Modal = () => {
   const [modalContent, setModalContent] = useAtom(modalAtom);
   const [inputValue, setInputValue] = useState("");
   const [secondInputValue, setSecondInputValue] = useState("");
+  const firstInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (modalContent?.inputValue) {
@@ -15,7 +16,18 @@ const Modal = () => {
     if (modalContent?.inputValue2 !== undefined) {
       setSecondInputValue(modalContent.inputValue2 || "");
     }
-  }, [modalContent?.inputValue, modalContent?.inputValue2]);
+
+    // 모달이 열리면 첫 번째 인풋에 자동 focus
+    if (modalContent && modalContent.inputValue !== undefined) {
+      const timer = setTimeout(() => {
+        if (firstInputRef.current) {
+          firstInputRef.current.focus();
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [modalContent?.inputValue, modalContent?.inputValue2, modalContent]);
 
   if (!modalContent) return null;
 
@@ -95,6 +107,7 @@ const Modal = () => {
           {modalContent.children}
           {modalContent.inputValue !== undefined && (
             <input
+              ref={firstInputRef}
               type="text"
               value={inputValue}
               onChange={handleInputChange}

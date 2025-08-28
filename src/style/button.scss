@@ -39,9 +39,33 @@ button {
   border-radius: 5px;
   font-size: 24px;
   color: #fff;
+  width: 30px;
+  height: 30px;
   padding: 10px 15px;
   position: relative;
   transition: all 0.2s ease;
+  &.prev {
+    background-color: white;
+    mask-image: url("/chevron-left.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url("/chevron-left.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+  &.next {
+    background-color: white;
+    mask-image: url("/chevron-right.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url("/chevron-right.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
 
   &:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.2);
