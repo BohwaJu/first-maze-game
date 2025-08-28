@@ -10,6 +10,7 @@ import { Provider } from "jotai";
 import Modal from "@/components/Modal";
 import Toast from "@/components/Toast";
 import ImagePrefetchLoader from "@/components/ImagePrefetchLoader";
+import EpisodeRedirector from "@/components/EpisodeRedirector";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({
             <main className="root-main-container">{children}</main>
             <Modal />
             <Toast />
+            <EpisodeRedirector />
           </ImagePrefetchLoader>
         </Provider>
       </body>

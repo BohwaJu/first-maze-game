@@ -6,6 +6,7 @@ import { LINESIA_TEXT } from "@/story/beforeUnderground";
 import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import RollbackButton from "@/components/RollbackButton";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
@@ -18,6 +19,7 @@ const Page = () => {
   };
 
   const handleButtonClick = () => {
+    localStorage.setItem("episode", "/episode/ep1/firstMemory");
     router.push("/episode/ep1/firstMemory");
   };
 
@@ -38,6 +40,7 @@ const Page = () => {
           />
         )}
       </div>
+      <RollbackButton />
     </div>
   );
 };

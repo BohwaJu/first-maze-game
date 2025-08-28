@@ -21,7 +21,7 @@
 .background-home {
   @include background-base;
   &::before {
-    background-image: url("/bg_root.jpg");
+    background-image: url("/bg_castle.jpg");
   }
 }
 

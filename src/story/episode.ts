@@ -310,9 +310,320 @@ export const EP_2 = [
     className: "text-primary",
   },
   {
-    text: `“매질로 끝나서 다행이지.”
+    text: `“갑자기 뛰는걸 어떻게 막으라고…”
 `,
     className: "text-primary",
     imgUrl: "/merry.png",
+  },
+  {
+    text: `“쉬잇! 얘들아, 목소리가 너무 커.”
+`,
+    className: "text-primary",
+    imgUrl: "/ha2.png",
+  },
+  {
+    text: `하녀하나가 손가락을 입에 대며 다그쳤다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“그래도 예전에 비하면 훨씬 낫지. 메리 네가 성에 들어온지 얼마 안되서그래.”
+`,
+    className: "text-primary",
+    imgUrl: "/ha1.png",
+  },
+  {
+    text: `“맞아. 아가씨가 가끔 좀 이상행동을 하긴 해도…지금은 좀 숨이 트인달까…”
+`,
+    className: "text-primary",
+    imgUrl: "/ha2.png",
+  },
+  {
+    text: `메리는 예전에 무슨일이 있었길래 그러냐며 물어봤지만, 성에서 오래 일한 하녀들은 모르는게 약이라며 대충 얼버무렸다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“아가씨 이마에 있는 보석이, 영지 하나를 살 수 있을 정도로 귀한거래.”
+`,
+    className: "text-primary",
+    imgUrl: "/ha2.png",
+  },
+  {
+    text: `“참 기구한 인생이야.”
+
+`,
+    className: "text-primary",
+    imgUrl: "/ha2.png",
+  },
+  {
+    text: `“완전 걸어다니는 보물이네.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `그들은 맞은것도 잊은 채, 수다를 떨어댔다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“근데 폐하는 언제까지 아가씨를 궁에 머물게 하시려나.”
+`,
+    className: "text-primary",
+    imgUrl: "/ha1.png",
+  },
+  {
+    text: `“글쎄, 아무래도 성인이 될 때까지는 돌봐주시지 않을까?”
+`,
+    className: "text-primary",
+    imgUrl: "/ha2.png",
+  },
+  {
+    text: `“좋은 혼처를 구해주실 수도 있고…”
+`,
+    className: "text-primary",
+    imgUrl: "/ha2.png",
+  },
+  {
+    text: `“그럴리가.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `“가문도 없는 평민출신에 고아라며. 쓸모라도 있어야 곁에 두시겠지.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `“사실 다들 알면서도 쉬쉬 하는거잖아.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `메리의 말에 아무도 반박할 수 없었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `성 내 고용인들은 황제가 연고도없는 평민 아이를 보살피는것을 썩 탐탁치 않아했다. 
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“설마 숨겨둔 자식이라거나, 아니면 폐하 취향이…”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `“메리!”
+`,
+    className: "text-primary",
+    imgUrl: "/ha1.png",
+  },
+  {
+    text: `옆에있던 하녀가 놀라 메리의 입을 황급히 막는다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“메리 너… 누가 들으면 어쩌려고 그래!”
+`,
+    className: "text-primary",
+    imgUrl: "/ha1.png",
+  },
+  {
+    text: `“아 알았어!”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `메리는 신경질적으로 다른 하녀의 손을 뿌리치고 빨랫더미를 바구니에 우겨넣었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `툭툭 치마를 털어내자, 먼지가 일렁였다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `문 틈 너머, 프레시아는 다과가 가득 든 바구니를 하녀들에게 전해주지 못하고 도망치듯 자신의 방으로 돌아왔다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `문 틈 너머, 프레시아는 다과가 가득 든 바구니를 하녀들에게 전해주지 못하고 도망치듯 자신의 방으로 돌아왔다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `‘가문도 없는 평민출신에 고아라며.’
+`,
+    className: "text-gray",
+  },
+  {
+    text: `이 한마디가, 계속해서 메아리친다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `다음날 아침, 짙은 우드향이 나는 아이리스의 서재.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `아이리스는 평소와 같이 정무를 처리하고 있었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `오늘도 접견용 소파에 앉아, 책에서 배운 것들을 줄줄이 늘어놓는 프레시아를 지긋이 바라 보며, 아이리스는 알 수 없는 표정을 지었다. 
+`,
+    className: "text-primary",
+  },
+  {
+    text: `‘잘도 짹짹거리는군’
+`,
+    className: "text-gray",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `싫지만은 않은 눈치였다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `프레시아는 어느새 글자를 다 뗀 듯 하다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `아이리스의 시선을 감지한 프레시아는, 재잘대던 입을 멈추고는 그의 눈치를 살폈다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“방해돼요…?”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `프레시아는 작은 손으로 두꺼운 책을 만지작 거렸다.
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `"아니."
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `아이리스가 서류를 한장 넘긴다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `사락 사락 종이 넘기는 소리. 
+`,
+    className: "text-primary",
+  },
+  {
+    text: `일에 집중하는 아이리스의 모습을 바라보던 프레시아가 작은 목소리로 말했다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“언젠가는 제가 아이리스한테 도움이 됐으면 좋겠어요.”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `“무슨 도움?”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `“뭐든지요. 아이리스가 인정할만큼 똑똑해질거에요.”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `“내 인정이 왜 필요하지?”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `“왜냐면...”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `“일도 같이 할 수 있고 또…”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `“쓸모가 있어야 오래오래 여기 있을 수 있으니까요.”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `“뭐?”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `업무를 수행하던 손이 멈추었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“어제처럼 혼자 넘어져서도 안되고…”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `애가 할 수 있는 소리가 아니였다. 기가찬다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“누가 그런소리를 했어?”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `아이리스가 인상을 쓰자, 프레시아는 기억이 나지 않는다며 허둥거렸다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `순순히 털어놓지 않을 것 같자, 프레시아를 방으로 돌려보낸 아이리스는 만년필을 신경질적으로 내려놓았다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `퍽 소리와 함께, 촉에 묻어있던 잔 잉크가 책상 위로 흩뿌려졌다.
+`,
+    className: "text-primary",
   },
 ];

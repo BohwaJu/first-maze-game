@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
 import { usePathname, useRouter } from "next/navigation";
 import { useToast } from "@/hooks/useToast";
+import RollbackButton from "@/components/RollbackButton";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
@@ -39,11 +40,19 @@ const Page = () => {
     });
   };
 
-  // const [bgClass, setBgClass] = useState("background-hall");
+  const [bgClass, setBgClass] = useState("background-hall");
 
   const handleIndexChange = (index: number) => {
     console.log("현재인덱스", index);
-    // setBgClass(index <= 5 ? "background-hall" : "background-home");
+    if (index <= 5) {
+      setBgClass("background-hall");
+    } else if (index <= 20) {
+      setBgClass("background-home");
+    } else if (index <= 30) {
+      setBgClass("background-beer");
+    } else {
+      setBgClass("background-home");
+    }
   };
 
   return (
@@ -58,8 +67,8 @@ const Page = () => {
       )}
 
       {showContent && (
-        <div className={`game-page ${null} background-hall`}>
-          <PageHeader title="EP2" subtitle="-__-" />
+        <div className={`game-page ${bgClass}`}>
+          <PageHeader title="EP2" subtitle="없어도 되는 것" />
           <TextSlider
             texts={EP_2}
             onLastTextReached={handleLastTextReached}
@@ -77,6 +86,7 @@ const Page = () => {
           </div>
         </div>
       )}
+      <RollbackButton />
     </>
   );
 };

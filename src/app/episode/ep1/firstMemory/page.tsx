@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
 import { useToast } from "@/hooks/useToast";
 import { usePathname, useRouter } from "next/navigation";
+import RollbackButton from "@/components/RollbackButton";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
@@ -30,6 +31,7 @@ const Page = () => {
       placeholder1: "키워드",
       onClick: (answer: string) => {
         if (pathname === "/episode/ep1/firstMemory" && answer === "트라우마") {
+          localStorage.setItem("episode", "/episode/ep2/trauma");
           router.push("/episode/ep2/trauma");
         } else {
           showToast("아무일도 일어나지 않았다.");
@@ -64,6 +66,7 @@ const Page = () => {
               />
             )}
           </div>
+          <RollbackButton />
         </div>
       )}
     </>
