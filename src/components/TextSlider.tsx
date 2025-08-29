@@ -95,10 +95,7 @@ const TextSlider = ({
             current?.className || ""
           }`}
         >
-          {(current?.text || "텍스트 없음").replace(
-            /\{\{nickname\}\}/g,
-            nickname
-          )}
+          {(current?.text || " ").replace(/\{\{nickname\}\}/g, nickname)}
         </p>
       </div>
 

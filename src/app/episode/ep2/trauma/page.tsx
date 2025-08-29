@@ -44,12 +44,10 @@ const Page = () => {
 
   const handleIndexChange = (index: number) => {
     console.log("현재인덱스", index);
-    if (index <= 44) {
+    if (index <= 43) {
       setBgClass("background-home");
-    } else if (index <= 100) {
-      setBgClass("background-kings-desk");
     } else {
-      setBgClass("background-home");
+      setBgClass("background-kings-desk");
     }
   };
 
@@ -58,7 +56,7 @@ const Page = () => {
       {!showContent && (
         <FadeInOutText
           title="Episode 2"
-          subtitle="없어도 되는 것"
+          subtitle="| 없어도 되는 것"
           titleDelay={0}
           onComplete={() => setShowContent(true)}
         />

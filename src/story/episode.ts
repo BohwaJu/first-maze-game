@@ -520,11 +520,6 @@ export const EP_2 = [
     imgUrl: "/merry.png",
   },
   {
-    text: `문 틈 너머, 프레시아는 다과가 가득 든 바구니를 하녀들에게 전해주지 못하고 도망치듯 자신의 방으로 돌아왔다.
-`,
-    className: "text-primary",
-  },
-  {
     text: `하녀들은 황급히 자리에서 일어나 프레시아를 찾으러 나갔다.
 `,
     className: "text-primary",

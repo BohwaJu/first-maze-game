@@ -46,7 +46,7 @@ const Page = () => {
       {!showContent && (
         <FadeInOutText
           title="Episode 1"
-          subtitle="첫 번째 기억"
+          subtitle="| 첫 번째 기억"
           titleDelay={0}
           onComplete={() => setShowContent(true)}
         />

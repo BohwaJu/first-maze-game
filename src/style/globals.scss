@@ -431,3 +431,15 @@ body::-webkit-scrollbar {
     transform: translateY(0) scale(1);
   }
 }
+
+// 이미지 프리로딩 컨테이너
+.image-prefetch-container {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
