@@ -264,6 +264,38 @@ export const EP_1 = [
     className: "text-primary",
     imgUrl: "/rose.png",
   },
+  {
+    text: `‘윽…’
+`,
+    className: "text-gray",
+    isSponsorCheck: true,
+  },
+  {
+    text: `순간, 머리가 지끈거렸다. 
+`,
+    className: "text-primary",
+    isSponsorCheck: true,
+  },
+  {
+    text: `"{{nickname}}, 괜찮아?"
+`,
+    className: "text-primary",
+    imgUrl: "/Lloyd.png",
+    isSponsorCheck: true,
+  },
+  {
+    text: `"안색이 안좋아보여."
+`,
+    className: "text-primary",
+    imgUrl: "/Lloyd.png",
+    isSponsorCheck: true,
+  },
+  {
+    text: `저 사람들의 얼굴들이…낯설지가 않다.
+`,
+    className: "text-primary",
+    isSponsorCheck: true,
+  },
 ];
 
 export const EP_2 = [
@@ -414,7 +446,13 @@ export const EP_2 = [
     className: "text-primary",
   },
   {
-    text: `“설마 숨겨둔 자식이라거나, 아니면 폐하 취향이…”
+    text: `“설마 숨겨둔 자식이라거나.”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `“아니면 폐하 취향이 약간...”
 `,
     className: "text-primary",
     imgUrl: "/merry.png",
@@ -449,11 +487,6 @@ export const EP_2 = [
   },
   {
     text: `툭툭 치마를 털어내자, 먼지가 일렁였다.
-`,
-    className: "text-primary",
-  },
-  {
-    text: `문 틈 너머, 프레시아는 다과가 가득 든 바구니를 하녀들에게 전해주지 못하고 도망치듯 자신의 방으로 돌아왔다.
 `,
     className: "text-primary",
   },
@@ -509,7 +542,7 @@ export const EP_2 = [
     className: "text-primary",
   },
   {
-    text: `“방해돼요…?”
+    text: `“혹시 방해돼요?”
 `,
     className: "text-primary",
     imgUrl: "/fressia.png",
@@ -518,7 +551,6 @@ export const EP_2 = [
     text: `프레시아는 작은 손으로 두꺼운 책을 만지작 거렸다.
 `,
     className: "text-primary",
-    imgUrl: "/fressia.png",
   },
   {
     text: `"아니."
@@ -609,7 +641,7 @@ export const EP_2 = [
     text: `“누가 그런소리를 했어?”
 `,
     className: "text-primary",
-    imgUrl: "/fressia.png",
+    imgUrl: "/iris.png",
   },
   {
     text: `아이리스가 인상을 쓰자, 프레시아는 기억이 나지 않는다며 허둥거렸다.

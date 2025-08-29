@@ -10,9 +10,9 @@ const RollbackButton: React.FC = () => {
 
   const handleClickRollback = () => {
     showConfirmModal({
-      title: "기억을 잃는다",
+      title: "기억을 잃는다.",
       content:
-        "Episode 부터는 클리어 시 기억이 저장됩니다. \n초기화 하시겠습니까?",
+        "Episode 부터는 클리어 시 기억이 저장됩니다. \n기억을 초기화 하시겠습니까?",
       confirmText: "초기화",
       cancelText: "취소",
       onConfirm: handleRollback,

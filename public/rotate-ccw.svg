@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-ccw"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2006_752)">
+<path d="M3.79167 6.16669V10.9167H8.54167" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.77876 14.875C6.29207 16.332 7.26498 17.5826 8.5509 18.4386C9.83682 19.2945 11.3661 19.7094 12.9083 19.6206C14.4505 19.5319 15.922 18.9443 17.1013 17.9465C18.2805 16.9486 19.1035 15.5946 19.4463 14.0884C19.789 12.5821 19.633 11.0053 19.0017 9.59545C18.3703 8.18561 17.2979 7.01913 15.946 6.27177C14.5941 5.52441 13.0359 5.23667 11.5062 5.45188C9.97653 5.6671 8.55823 6.37362 7.46501 7.465L3.79167 10.9167" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_2006_752">
+<rect width="19" height="19" fill="white" transform="translate(3 3)"/>
+</clipPath>
+</defs>
+</svg>

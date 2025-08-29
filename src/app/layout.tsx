@@ -50,6 +50,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${gideonRoman.variable} ${nanumMyeongjo.variable}`}
       >
         <Provider>
+          <EpisodeRedirector />
           <ImagePrefetchLoader
             fallback={
               <div className="text-center">
@@ -63,7 +64,6 @@ export default function RootLayout({
             <main className="root-main-container">{children}</main>
             <Modal />
             <Toast />
-            <EpisodeRedirector />
           </ImagePrefetchLoader>
         </Provider>
       </body>

@@ -2,11 +2,10 @@
 import CustomButton from "@/components/CustomButton";
 import PageHeader from "@/components/PageHeader";
 import TextSlider from "@/components/TextSlider";
-import { LINESIA_TEXT } from "@/story/beforeUnderground";
-import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import RollbackButton from "@/components/RollbackButton";
+import { LINESIA_TEXT } from "@/story/beforeUnderground";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
@@ -40,7 +39,6 @@ const Page = () => {
           />
         )}
       </div>
-      <RollbackButton />
     </div>
   );
 };

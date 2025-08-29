@@ -50,3 +50,15 @@
     background-image: url("/bg_hall.jpg");
   }
 }
+.background-kings-desk {
+  @include background-base;
+  &::before {
+    background-image: url("/bg_kings_desk.jpg");
+  }
+}
+.background-fressia-room {
+  @include background-base;
+  &::before {
+    background-image: url("/bg_fressia_room.jpg");
+  }
+}

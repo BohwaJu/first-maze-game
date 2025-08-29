@@ -66,6 +66,13 @@ const TextSlider = ({
     }
   };
 
+  const jumpToLast = () => {
+    const lastIndex = filteredTexts.length - 1;
+    setCurrentIndex(lastIndex);
+    if (onIndexChange) onIndexChange(lastIndex);
+    if (onLastTextReached) onLastTextReached();
+  };
+
   const current = filteredTexts[currentIndex];
 
   return (
@@ -79,6 +86,7 @@ const TextSlider = ({
             width={current?.imgWidth ?? 200}
             height={current?.imgHeight ?? 200}
             className="slider-image"
+            loading="eager"
             priority
           />
         )}
@@ -107,6 +115,12 @@ const TextSlider = ({
           className="slider-button next"
         ></button>
       </div>
+      <button
+        onClick={jumpToLast}
+        disabled={currentIndex === filteredTexts.length - 1}
+        className="btn-jump-to-last"
+        title="마지막으로 이동"
+      ></button>
     </div>
   );
 };

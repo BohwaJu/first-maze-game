@@ -54,7 +54,7 @@ const Page = () => {
 
       {showContent && (
         <div className="game-page background-hall">
-          <PageHeader title="EP1" subtitle="- 잊혀지지 않는 ____ -" />
+          <PageHeader title="EP1" subtitle="잊혀지지 않는 ____" />
           <TextSlider texts={EP_1} onLastTextReached={handleLastTextReached} />
 
           <div className="button-container fade-in-slide-up">
