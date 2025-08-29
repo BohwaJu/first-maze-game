@@ -13,7 +13,6 @@ export default function ImagePrefetchLoader({
   const [loadedCount, setLoadedCount] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [criticalImagesLoaded, setCriticalImagesLoaded] = useState(false);
 
   useEffect(() => {
     async function loadImageList() {
@@ -38,6 +37,9 @@ export default function ImagePrefetchLoader({
   const handleImageLoad = () => {
     setLoadedCount((prev) => {
       const newCount = prev + 1;
+      if (newCount >= totalCount) {
+        setIsLoading(false);
+      }
       return newCount;
     });
   };
@@ -45,44 +47,53 @@ export default function ImagePrefetchLoader({
   const handleImageError = () => {
     setLoadedCount((prev) => {
       const newCount = prev + 1;
+      if (newCount >= totalCount) {
+        setIsLoading(false);
+      }
       return newCount;
     });
   };
 
-  // 중요한 이미지들이 로드되면 메인 컨텐츠 표시
+  // CSS 배경 이미지들도 미리 로드
   useEffect(() => {
-    if (loadedCount >= Math.min(8, totalCount)) {
-      setCriticalImagesLoaded(true);
-      setIsLoading(false);
+    if (imageList.length > 0) {
+      const cssBackgroundImages = [
+        "/bg_castle.jpg",
+        "/bg_garden.jpg",
+        "/bg_beer.jpg",
+        "/bg_book.jpg",
+        "/bg_hall.jpg",
+        "/bg_kings_desk.jpg",
+        "/bg_fressia_room.jpg",
+        "/bg_linen.jpg",
+      ];
+
+      cssBackgroundImages.forEach((imagePath) => {
+        const img = new window.Image();
+        img.onload = () => {
+          console.log(`CSS background image preloaded: ${imagePath}`);
+        };
+        img.onerror = () => {
+          console.warn(`Failed to preload CSS background image: ${imagePath}`);
+        };
+        img.src = imagePath;
+      });
     }
-  }, [loadedCount, totalCount]);
+  }, [imageList]);
 
   const progress = totalCount > 0 ? (loadedCount / totalCount) * 100 : 0;
 
-  // 배경 이미지들을 우선순위로 분류
-  const backgroundImages = imageList.filter((img) => img.includes("bg_"));
-  const otherImages = imageList.filter((img) => !img.includes("bg_"));
-
-  // 중요한 이미지들 (배경 이미지 + 기타 이미지 일부)
-  const criticalImages = [
-    ...backgroundImages.slice(0, 5),
-    ...otherImages.slice(0, 3),
-  ];
-  const backgroundImagesRemaining = imageList.filter(
-    (img) => !criticalImages.includes(img)
-  );
-
   return (
     <>
-      {/* 중요한 이미지들 (즉시 로딩) */}
+      {/* 모든 이미지 즉시 로딩 */}
       <div className="image-prefetch-container">
-        {criticalImages.map((imagePath, index) => (
+        {imageList.map((imagePath: string, index: number) => (
           <Image
-            key={`critical-${index}`}
+            key={imagePath}
             src={imagePath}
             alt=""
-            width={1}
-            height={1}
+            width={30}
+            height={30}
             onLoad={handleImageLoad}
             onError={handleImageError}
             priority={true}
@@ -90,26 +101,6 @@ export default function ImagePrefetchLoader({
           />
         ))}
       </div>
-
-      {/* 백그라운드 이미지들 (lazy 로딩) */}
-      {criticalImagesLoaded && (
-        <div className="image-prefetch-container">
-          {backgroundImagesRemaining.map((imagePath, index) => (
-            <Image
-              key={`background-${index}`}
-              src={imagePath}
-              alt=""
-              width={1}
-              height={1}
-              onLoad={handleImageLoad}
-              onError={handleImageError}
-              priority={false}
-              quality={1}
-              loading="lazy"
-            />
-          ))}
-        </div>
-      )}
 
       {/* 로딩 화면 또는 메인 컨텐츠 */}
       {isLoading && fallback ? (
@@ -122,8 +113,8 @@ export default function ImagePrefetchLoader({
             />
           </div>
           <p className="mt-2 text-sm text-gray-600">
-            이미지 로딩 중... {loadedCount}/{Math.min(8, totalCount)} (
-            {Math.round(progress)}%)
+            이미지 로딩 중... {loadedCount}/{totalCount} ({Math.round(progress)}
+            %)
           </p>
         </div>
       ) : (

@@ -28,7 +28,8 @@ const Page = () => {
         console.log(`이동: ${path}`);
         if (path === "정원") {
           router.push(`/garden`);
-          return;
+        } else {
+          router.push(`/not-found`);
         }
       },
     });

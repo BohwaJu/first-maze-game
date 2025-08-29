@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
 import { useToast } from "@/hooks/useToast";
 import { usePathname, useRouter } from "next/navigation";
-import RollbackButton from "@/components/RollbackButton";
+import ClearStorageButton from "@/components/ClearStorageButton";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
@@ -25,7 +25,7 @@ const Page = () => {
   const handleButtonClick = () => {
     showNavigationModal({
       title: "EP1",
-      content: `이야기의 핵심이 되는 키워드를 찾아야 할 것 같다.`,
+      content: `이야기를 관통하는 키워드를 찾아야 할 것 같다.`,
       confirmText: "이동",
       cancelText: "취소",
       placeholder1: "키워드",
@@ -66,7 +66,7 @@ const Page = () => {
               />
             )}
           </div>
-          <RollbackButton />
+          <ClearStorageButton />
         </div>
       )}
     </>

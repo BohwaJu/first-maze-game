@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import { useModal } from "@/hooks/useModal";
 import { usePathname, useRouter } from "next/navigation";
 import { useToast } from "@/hooks/useToast";
-import RollbackButton from "@/components/RollbackButton";
+import ClearStorageButton from "@/components/ClearStorageButton";
 
 const Page = () => {
   const [showButton, setShowButton] = useState(false);
@@ -31,7 +31,7 @@ const Page = () => {
       placeholder1: "키워드",
       onClick: (answer: string) => {
         if (pathname === "/episode/ep2/trauma" && answer === "가족") {
-          router.push("/episode/ep3/forgetMeNot");
+          router.push("/episode/ep3/findHer");
         } else {
           showToast("아무일도 일어나지 않았다.");
           return;
@@ -40,12 +40,12 @@ const Page = () => {
     });
   };
 
-  const [bgClass, setBgClass] = useState("background-home");
+  const [bgClass, setBgClass] = useState("background-linen");
 
   const handleIndexChange = (index: number) => {
     console.log("현재인덱스", index);
     if (index <= 43) {
-      setBgClass("background-home");
+      setBgClass("background-linen");
     } else {
       setBgClass("background-kings-desk");
     }
@@ -56,7 +56,7 @@ const Page = () => {
       {!showContent && (
         <FadeInOutText
           title="Episode 2"
-          subtitle="| 없어도 되는 것"
+          subtitle="| 상처"
           titleDelay={0}
           onComplete={() => setShowContent(true)}
         />
@@ -64,7 +64,7 @@ const Page = () => {
 
       {showContent && (
         <div className={`game-page ${bgClass}`}>
-          <PageHeader title="EP2" subtitle="없어도 되는 것" />
+          <PageHeader title="EP2" subtitle="__이라는 이름의 상처" />
           <TextSlider
             texts={EP_2}
             onLastTextReached={handleLastTextReached}
@@ -80,7 +80,7 @@ const Page = () => {
               />
             )}
           </div>
-          <RollbackButton />
+          <ClearStorageButton />
         </div>
       )}
     </>

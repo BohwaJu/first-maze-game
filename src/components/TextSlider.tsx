@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { isSponsorGuild } from "@/utils/sponsor";
+import { useModal } from "@/hooks/useModal";
 
 interface TextItem {
   text: string;
@@ -29,6 +30,7 @@ const TextSlider = ({
   const [nickname, setNickname] = useState("무명");
   const [hydrated, setHydrated] = useState(false);
 
+  const { showConfirmModal, closeModal } = useModal();
   useEffect(() => {
     setHydrated(true);
   }, []);
@@ -66,11 +68,20 @@ const TextSlider = ({
     }
   };
 
-  const jumpToLast = () => {
-    const lastIndex = filteredTexts.length - 1;
-    setCurrentIndex(lastIndex);
-    if (onIndexChange) onIndexChange(lastIndex);
-    if (onLastTextReached) onLastTextReached();
+  const handleClickJumpToLast = () => {
+    showConfirmModal({
+      title: "마지막 대사로 이동",
+      content: "마지막 대사로 이동할까요?",
+      confirmText: "이동",
+      cancelText: "취소",
+      onCancel: closeModal,
+      onConfirm: () => {
+        const lastIndex = filteredTexts.length - 1;
+        setCurrentIndex(lastIndex);
+        if (onIndexChange) onIndexChange(lastIndex);
+        if (onLastTextReached) onLastTextReached();
+      },
+    });
   };
 
   const current = filteredTexts[currentIndex];
@@ -80,7 +91,7 @@ const TextSlider = ({
       <div className="text-slide" key={currentIndex}>
         {current?.imgUrl && (
           <Image
-            key={`${currentIndex}-image`}
+            key={current.imgUrl}
             src={current.imgUrl}
             alt={current?.text ? `${current.text} 이미지` : "slide image"}
             width={current?.imgWidth ?? 200}
@@ -113,7 +124,7 @@ const TextSlider = ({
         ></button>
       </div>
       <button
-        onClick={jumpToLast}
+        onClick={handleClickJumpToLast}
         disabled={currentIndex === filteredTexts.length - 1}
         className="btn-jump-to-last"
         title="마지막으로 이동"

@@ -62,3 +62,9 @@
     background-image: url("/bg_fressia_room.jpg");
   }
 }
+.background-linen {
+  @include background-base;
+  &::before {
+    background-image: url("/bg_linen.jpg");
+  }
+}

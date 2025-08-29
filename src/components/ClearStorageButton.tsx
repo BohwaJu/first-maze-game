@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/useModal";
 
-const RollbackButton: React.FC = () => {
+const ClearStorageButton: React.FC = () => {
   const router = useRouter();
   const { showConfirmModal } = useModal();
 
@@ -12,7 +12,7 @@ const RollbackButton: React.FC = () => {
     showConfirmModal({
       title: "기억을 잃는다.",
       content:
-        "Episode 부터는 클리어 시 기억이 저장됩니다. \n기억을 초기화 하시겠습니까?",
+        "Episode 부터는 클리어 시 저장됩니다. \n기억을 초기화 하시겠습니까?",
       confirmText: "초기화",
       cancelText: "취소",
       onConfirm: handleRollback,
@@ -34,4 +34,4 @@ const RollbackButton: React.FC = () => {
   );
 };
 
-export default RollbackButton;
+export default ClearStorageButton;

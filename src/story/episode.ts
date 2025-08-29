@@ -291,6 +291,18 @@ export const EP_1 = [
     isSponsorCheck: true,
   },
   {
+    text: `이 곳은 강력한 마법이 걸려있는 장소.
+`,
+    className: "text-primary",
+    isSponsorCheck: true,
+  },
+  {
+    text: `어쩐지 위험한 느낌이 든다.
+`,
+    className: "text-primary",
+    isSponsorCheck: true,
+  },
+  {
     text: `저 사람들의 얼굴들이…낯설지가 않다.
 `,
     className: "text-primary",
@@ -800,7 +812,7 @@ export const EP_2 = [
     imgUrl: "/ciel.png",
   },
   {
-    text: `‘휴, 넘어가는건가.’
+    text: `‘휴, 넘어갔다.’
 `,
     className: "text-gray",
     imgUrl: "/ciel.png",
@@ -848,9 +860,9 @@ export const EP_2 = [
     imgUrl: "/fressia.png",
   },
   {
-    text: `‘…?’
+    text: `‘...?’
 `,
-    className: "text-primary",
+    className: "text-gray",
     imgUrl: "/iris.png",
   },
   {
@@ -873,7 +885,7 @@ export const EP_2 = [
   {
     text: `‘언니라고…’
 `,
-    className: "text-primary",
+    className: "text-gray",
     imgUrl: "/iris.png",
   },
   {
