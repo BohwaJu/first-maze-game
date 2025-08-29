@@ -44,12 +44,10 @@ const Page = () => {
 
   const handleIndexChange = (index: number) => {
     console.log("현재인덱스", index);
-    if (index <= 36) {
+    if (index <= 44) {
       setBgClass("background-home");
     } else if (index <= 100) {
       setBgClass("background-kings-desk");
-    } else if (index <= 200) {
-      setBgClass("background-fressia-room");
     } else {
       setBgClass("background-home");
     }

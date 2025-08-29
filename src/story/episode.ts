@@ -491,7 +491,46 @@ export const EP_2 = [
     className: "text-primary",
   },
   {
+    text: `그때 하녀 하나가 문을 박차고 들어온다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“혹시 아가씨 못보셨어요?”
+`,
+    className: "text-primary",
+    imgUrl: "/ha3.png",
+  },
+  {
+    text: `“못봤는데. 방에 계시지 않아?”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
+    text: `“지금 폐하께서 찾으시는데 방에 안계셔요… 혼자 어딜 가신건지…”
+`,
+    className: "text-primary",
+    imgUrl: "/ha3.png",
+  },
+  {
+    text: `“아휴...”
+`,
+    className: "text-primary",
+    imgUrl: "/merry.png",
+  },
+  {
     text: `문 틈 너머, 프레시아는 다과가 가득 든 바구니를 하녀들에게 전해주지 못하고 도망치듯 자신의 방으로 돌아왔다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `하녀들은 황급히 자리에서 일어나 프레시아를 찾으러 나갔다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `한참 후, 아무런 목소리도 들리지 않자, 프레시아가 커튼을 젖히며 모습을 드러냈다. 
 `,
     className: "text-primary",
   },
@@ -502,6 +541,11 @@ export const EP_2 = [
   },
   {
     text: `이 한마디가, 계속해서 메아리친다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `공간이 바뀐다.
 `,
     className: "text-primary",
   },
@@ -610,6 +654,11 @@ export const EP_2 = [
     imgUrl: "/fressia.png",
   },
   {
+    text: `아이리스는 우물거리는 프레시아가 꽤 귀엽다고 생각했다.
+`,
+    className: "text-primary",
+  },
+  {
     text: `“쓸모가 있어야 오래오래 여기 있을 수 있으니까요.”
 `,
     className: "text-primary",
@@ -622,23 +671,29 @@ export const EP_2 = [
     imgUrl: "/iris.png",
   },
   {
-    text: `업무를 수행하던 손이 멈추었다.
+    text: `업무를 수행하던 손이 멈춘다.
 `,
     className: "text-primary",
   },
   {
-    text: `“어제처럼 혼자 넘어져서도 안되고…”
+    text: `“어제처럼 혼자 넘어져서도 안되고... 또...”
 `,
     className: "text-primary",
     imgUrl: "/fressia.png",
   },
   {
-    text: `애가 할 수 있는 소리가 아니였다. 기가찬다.
+    text: `이제 막 열두살이 된 애가 할 소리는 아니였다.
 `,
     className: "text-primary",
   },
   {
-    text: `“누가 그런소리를 했어?”
+    text: `'기가차군'
+`,
+    className: "text-gray",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `“누가 그런소리를 했지?”
 `,
     className: "text-primary",
     imgUrl: "/iris.png",
@@ -649,12 +704,201 @@ export const EP_2 = [
     className: "text-primary",
   },
   {
-    text: `순순히 털어놓지 않을 것 같자, 프레시아를 방으로 돌려보낸 아이리스는 만년필을 신경질적으로 내려놓았다.
+    text: `순순히 털어놓지 않을 것 같자, 아이리스는 만년필을 신경질적으로 내려놓았다.
 `,
     className: "text-primary",
   },
   {
     text: `퍽 소리와 함께, 촉에 묻어있던 잔 잉크가 책상 위로 흩뿌려졌다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“시엘!”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `마침 기다리고 있었다는 듯, 집사 시엘이 문을 열고 들어왔다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“예, 폐하!”
+`,
+    className: "text-primary",
+    imgUrl: "/ciel.png",
+  },
+  {
+    text: `유난히 신경질적인 아이리스의 표정을 본 시엘이 바짝 긴장했다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“하녀들이 주제넘은 소리를 했나본데…대체 관리를 어떻게 하는거지?”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `“내가 이런것까지 일일이 신경써야하나?”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `시엘은 곁눈질로 너저분해진 아이리스의 책상을 바라보며 무슨 대화들이 오갔을지 짐작했다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“바로 처리하겠습니다”
+`,
+    className: "text-primary",
+    imgUrl: "/ciel.png",
+  },
+  {
+    text: `“혀를 뽑아버리던지 자르던지 눈에서 안보이게 해.”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `“그런 잔인한 말씀을…”
+`,
+    className: "text-primary",
+    imgUrl: "/ciel.png",
+  },
+  {
+    text: `시엘이 프레시아를 흘긋 바라봤다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“그랬다간 아가씨께서 싫어하실 것 같은데요.”
+`,
+    className: "text-primary",
+    imgUrl: "/ciel.png",
+  },
+  {
+    text: `“……”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `그의 말에 아이리스는 아차 싶었는지, 다시 조용히 펜을 집어 새 서류를 앞에다 놓는다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“신경 안쓰이게 알아서 잘 처리해.”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `”…알겠습니다.”
+`,
+    className: "text-primary",
+    imgUrl: "/ciel.png",
+  },
+  {
+    text: `‘휴, 넘어가는건가.’
+`,
+    className: "text-gray",
+    imgUrl: "/ciel.png",
+  },
+  {
+    text: `그는 속으로 깊은 안도의 한숨을 내쉬며 서재를 나갔다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `이른 저녁까지 업무를 마친 아이리스는 어느새 소파에서 잠든 프레시아를 발견했다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `‘그새 잠든건가.’
+`,
+    className: "text-gray",
+  },
+  {
+    text: `프레시아가 곤히 자는것을 확인한 아이리스는 살며시 프레시아의 앞머리를 옆으로 넘겼다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“신기하단 말이지.”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `평소 분노로만 가득 차 있었던 아이리스는 하루에도 수십번씩 오락가락한 기분을 느끼는 자신을 이해할 수 없었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `이 아이와 있으면 편안한 기분이 들었다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“언니…”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `‘…?’
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `“……언니… 지마…”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `“…두고가지마…”
+`,
+    className: "text-primary",
+    imgUrl: "/fressia.png",
+  },
+  {
+    text: `악몽이라도 꾸는 건지, 프레시아가 부르르 떨며 눈물을 흘린다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `‘언니라고…’
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `계속해서 언니를 부르는 프레시아의 머리를 쓰다듬으며 인상을 찌푸렸다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `또 다시 깊은 곳에서 분노가 차오르는 듯 하다.
+`,
+    className: "text-primary",
+  },
+  {
+    text: `“그런건… 없어도 돼.”
+`,
+    className: "text-primary",
+    imgUrl: "/iris.png",
+  },
+  {
+    text: `안개가 걷힌다.
 `,
     className: "text-primary",
   },
